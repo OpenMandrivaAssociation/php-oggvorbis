@@ -6,7 +6,7 @@
 Summary:	PHP OGG wrapper for OGG/Vorbis files
 Name:		php-%{modname}
 Version:	0.2
-Release:	%mkrel 10
+Release:	%mkrel 11
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/oggvorbis
@@ -16,8 +16,6 @@ Patch0:		oggvorbis-0.2-label_at_end_of_compound_statement.diff
 BuildRequires:	oggvorbis-devel
 BuildRequires:	libogg-devel
 BuildRequires:	php-devel >= 3:5.2.0
-Provides:	php5-oggvorbis
-Obsoletes:	php5-oggvorbis
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
@@ -31,6 +29,15 @@ vice-versa.
 %patch0 -p0
 
 %build
+export CFLAGS="%{optflags}"
+export CXXFLAGS="%{optflags}"
+export FFLAGS="%{optflags}"
+
+%if %mdkversion >= 200710
+export CFLAGS="$CFLAGS -fstack-protector"
+export CXXFLAGS="$CXXFLAGS -fstack-protector"
+export FFLAGS="$FFLAGS -fstack-protector"
+%endif
 
 %{_usrsrc}/php-devel/buildext %{modname} "%{modname}.c" \
     "-logg -lvorbis -lvorbisenc -lvorbisfile" \
@@ -66,5 +73,3 @@ install -m755 %{soname} %{buildroot}%{_libdir}/php/extensions/
 %doc README*
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
-
