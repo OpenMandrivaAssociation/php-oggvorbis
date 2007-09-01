@@ -6,7 +6,7 @@
 Summary:	PHP OGG wrapper for OGG/Vorbis files
 Name:		php-%{modname}
 Version:	0.2
-Release:	%mkrel 11
+Release:	%mkrel 12
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/oggvorbis
@@ -29,15 +29,7 @@ vice-versa.
 %patch0 -p0
 
 %build
-export CFLAGS="%{optflags}"
-export CXXFLAGS="%{optflags}"
-export FFLAGS="%{optflags}"
-
-%if %mdkversion >= 200710
-export CFLAGS="$CFLAGS -fstack-protector"
-export CXXFLAGS="$CXXFLAGS -fstack-protector"
-export FFLAGS="$FFLAGS -fstack-protector"
-%endif
+%serverbuild
 
 %{_usrsrc}/php-devel/buildext %{modname} "%{modname}.c" \
     "-logg -lvorbis -lvorbisenc -lvorbisfile" \
