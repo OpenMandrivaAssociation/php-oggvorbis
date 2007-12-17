@@ -17,7 +17,6 @@ BuildRequires:	oggvorbis-devel
 BuildRequires:	libogg-devel
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 fopen wrapper for OGG/Vorbis files. Decompress OGG data to PCM audio and
