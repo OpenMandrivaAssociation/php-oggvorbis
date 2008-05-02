@@ -6,7 +6,7 @@
 Summary:	PHP OGG wrapper for OGG/Vorbis files
 Name:		php-%{modname}
 Version:	0.2
-Release:	%mkrel 14
+Release:	%mkrel 15
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/oggvorbis
@@ -17,7 +17,7 @@ BuildRequires:	oggvorbis-devel
 BuildRequires:	libogg-devel
 BuildRequires:	php-devel >= 3:5.2.0
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 fopen wrapper for OGG/Vorbis files. Decompress OGG data to PCM audio and
