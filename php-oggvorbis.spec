@@ -6,7 +6,7 @@
 Summary:	PHP OGG wrapper for OGG/Vorbis files
 Name:		php-%{modname}
 Version:	0.2
-Release:	%mkrel 20
+Release:	%mkrel 21
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/oggvorbis
