@@ -1,0 +1,26 @@
+--- oggvorbis.c	2003-09-11 01:42:07.000000000 +0200
++++ oggvorbis.c.oden	2004-06-20 14:10:19.169151960 +0200
+@@ -199,7 +199,6 @@
+ 							vorbis_comment_add_tag(&(data->vcomment), key, tmpstr);
+ 							efree(tmpstr);
+ 							break;
+-						default:
+ 							/* Do nothing with other types */
+ 					}
+ 				}
+@@ -293,7 +292,6 @@
+ 						samples[i][j] = (float)(val / 32767.0) - 1.0;
+ 					}
+ 					break;
+-				default:
+ 					/* Should never happen 
+ 					   Indicates invalid encoding mode */
+ 					return -1;
+@@ -591,7 +589,6 @@
+ 						*ptr = (char)(val >> 8);
+ 					}
+ 					break;
+-				default:
+ 					/* Invalid decode mode */
+ 					return -1;
+ 					break;
