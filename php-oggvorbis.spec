@@ -9,7 +9,7 @@ Version:	0.2
 Release:	36
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net/package/oggvorbis
+URL:		https://pecl.php.net/package/oggvorbis
 Source0:	%{modname}-%{version}.tar.bz2
 Source1:	%{modname}.ini.bz2
 Patch0:		oggvorbis-0.2-label_at_end_of_compound_statement.diff
